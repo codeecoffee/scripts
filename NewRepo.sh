@@ -2,16 +2,16 @@
 #Author: Fellipe F Lopes 
 
 
-function gitignore (){
-  # Add this file to .gitignore
-if [ -f ./.gitignore ] ;
-  then echo "#Ignoring Gitscript" >> .gitignore 
-  echo "NewRepo.sh" >> .gitignore
-else
-  echo "#Ignoring Gitscript" > .gitignore 
-  echo "NewRepo.sh" >> .gitignore
-fi
-}
+# function gitignore (){
+#   # Add this file to .gitignore
+# if [ -f ./.gitignore ] ;
+#   then echo "#Ignoring Gitscript" >> .gitignore 
+#   echo "NewRepo.sh" >> .gitignore
+# else
+#   echo "#Ignoring Gitscript" > .gitignore 
+#   echo "NewRepo.sh" >> .gitignore
+# fi
+# }
 function gitignore (){
   # Add this file to .gitignore
 if [ -f $1.gitignore ] ;
@@ -39,24 +39,19 @@ if [ "$response" == "no" ] ;
     exit 
 fi
 
+#1 - 2. Initilalizing and adding files...
 echo "Is the path bellow the root of your project? (Type yes or no)"
 path=`pwd`
 read response
-
-#1 - 2. Initilalizing and adding files...
 
 if [ "$response" == "no" ] ; 
   then
     echo "Input the exact path for your project root or end this script, copy this file into the root folder and run it again"
     read path
-    git init
-    gitignore "path"
-    git add $path
-else
-  git init
-  gitignore
-  git add .
 fi
+git init
+gitignore "path"
+git add $path
 echo "Adding files...."
 
 #3. Commit
