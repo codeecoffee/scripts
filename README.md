@@ -1,14 +1,7 @@
-# Bash Scripts
+# Scripts
 
-# 1. New Repo GitHub
-**NOTE: You must have an account on github for this to work!"**
+These scripts allow for automation a completition of everyday tasks quickly.
 
-What will this script do?
-
-0. Add itself to a .gitignore file **It will create one if none is found**
-1. Initilize a local .git
-2. Add project files 
-3. Commit with a message **if none the default will be applied: 'first message'**
-4. Create a public remote repo
-5. Add a remote repo to master 
-6. Push to master branch.
+1. sh = Bash scripts
+2. py = Python scripts
+3. ps = Powershell scripts
